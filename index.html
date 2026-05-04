@@ -1,399 +1,610 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eufonias del Magdalena</title>
-  
-  <link rel="icon" type="image/x-icon" href="img/logo_eufonias.jpeg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eufonias del Magdalena</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="index.js">
-</head>
-<body>
+    <link rel="icon" type="image/x-icon" href="img/logo_eufonias.jpeg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+   <script src="index.js"></script>
+  </head>
+  <body>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <div class="logo-container d-inline-block">
+            <img src="img/logo_eufonias.jpeg" alt="Logo" class="logo-navbar" />
+          </div>
+          <span class="brand-text">Eufonías del Magdalena</span>
+        </a>
 
-  <!--Menu-->
-<nav class="navbar navbar-expand-lg navbar-custom shadow-sm sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">
-      <div class="logo-container d-inline-block">
-        <img src="img/logo_eufonias.jpeg" alt="Logo" class="logo-navbar">
-      </div>
-      <span class="brand-text">Eufonías del Magdalena</span>
-    </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#nosotras">Nosotras</a></li>
-        <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#impacto">Impacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#historias">Blog</a></li>
-      </ul>
-      <a href="#" class="btn btn-catalogo ms-lg-4 mt-3 mt-lg-0 shadow-sm">Contacto</a>
-    </div>
-  </div>
-</nav>
-
-<!--Carrusel-->
-<section id="inicio" class="container-fluid p-0">
-  <div id="carruselEufonias" class="carousel slide carousel-fade" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carruselEufonias" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#carruselEufonias" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#carruselEufonias" data-bs-slide-to="2"></button>
-      <button type="button" data-bs-target="#carruselEufonias" data-bs-slide-to="3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="3000">
-        <div class="overlay-gradient"></div>
-        <img src="img/CafeYFrase.jpeg" class="d-block w-100 carousel-img" alt="Café 1">
-        <div class="carousel-caption">
-          <h1 class="display-3 fw-bold">Melodías del Río</h1>
-          <p class="lead">Descubre la esencia vibrante del Magdalena en cada nota.</p>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotras">Nosotras</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#productos">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#impacto">Impacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#historias">Blog</a>
+            </li>
+          </ul>
+          <a href="#" class="btn btn-catalogo ms-lg-4 mt-3 mt-lg-0 shadow-sm"
+            >Contacto</a
+          >
         </div>
       </div>
-      <div class="carousel-item" data-bs-interval="3000">
-        <div class="overlay-gradient"></div>
-        <img src="img/cafe.png" class="d-block w-100 carousel-img" alt="Café 2">
-        <div class="carousel-caption">
-          <h1 class="display-3 fw-bold">Sabor con Identidad</h1>
-          <p class="lead">Café de especialidad cultivado por manos expertas.</p>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carruselEufonias" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carruselEufonias" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</section>
+    </nav>
 
-<!--Propósito-->
-<section class="seccion-proposito py-5">
-  <div class="container py-lg-5">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <h6 class="text-uppercase fw-bold text-rojo mb-3">Café cultivado con propósito</h6>
-        <h2 class="display-4 fw-bold mb-4">Liderazgo que <span class="text-rojo">trasciende</span></h2>
-        <p class="lead text-muted mb-5">
-          Eufonías del Magdalena produce café de alta calidad, impulsando el <strong>liderazgo femenino</strong> y el desarrollo sostenible en las comunidades rurales.
-        </p>
-        <div class="d-flex flex-wrap gap-3">
-          <a href="#productos" class="btn btn-proposito-primario">Conoce nuestros productos</a>
-          <a href="#nosotras" class="btn btn-proposito-secundario">Nuestra historia</a>
+    <!--Carrusel-->
+    <section id="inicio" class="container-fluid p-0">
+      <div
+        id="carruselEufonias"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators custom-indicators">
+          <button
+            type="button"
+            data-bs-target="#carruselEufonias"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carruselEufonias"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carruselEufonias"
+            data-bs-slide-to="2"
+          ></button>
         </div>
-      </div>
-      <div class="col-lg-6 text-center mt-5 mt-lg-0">
-        <div class="img-wrapper shadow-lg">
-          <img src="img/EquipoTrabajo.jpeg" alt="Impacto" class="img-fluid rounded-4 img-flotante">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!--Mision, Visión-->
-<section id="nosotras" class="py-5 bg-light">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="overlay-modern"></div>
+            <video
+              playsinline
+              autoplay
+              muted
+              loop
+              class="carousel-modern-video"
+            >
+              <source src="img/ProductoVaso.mp4" type="video/mp4" />
+            </video>
+            <div class="carousel-caption modern-caption">
+              <div class="caption-box shadow-lg">
+                <span class="badge bg-rojo mb-3 px-3 py-2 rounded-pill"
+                  >Especialidad</span
+                >
+                <h1 class="display-2 fw-bold">
+                  Melodías <br /><span class="text-amarillo">del Río</span>
+                </h1>
+                <p class="lead d-none d-md-block">
+                  Descubre la esencia vibrante del Magdalena en cada nota.
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="#productos"
+                    class="btn btn-rojo rounded-pill px-4 py-2"
+                    >Ver Catálogo</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="overlay-modern"></div>
+            <img
+              src="img/EquipoTrabajo.jpeg"
+              class="d-block w-100 carousel-modern-img"
+              alt="Cosecha"
+            />
+            <div class="carousel-caption modern-caption">
+              <div class="caption-box shadow-lg">
+                <h1 class="display-2 fw-bold text-white">
+                  Sabor con <br /><span class="text-amarillo">Identidad</span>
+                </h1>
+                <p class="lead d-none d-md-block">
+                  Cultivado por manos expertas de mujeres cafeteras.
+                </p>
+                <div class="mt-4">
+                  <a
+                    href="#nosotras"
+                    class="btn btn-outline-light rounded-pill px-4 py-2"
+                    >Nuestra Historia</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="overlay-modern"></div>
+            <img
+              src="img/cafe.png"
+              class="d-block w-100 carousel-modern-img"
+              alt="Tradición"
+            />
+            <div class="carousel-caption modern-caption">
+              <div class="caption-box shadow-lg border-verde">
+                <h1 class="display-1 fw-bold">
+                  Tradición <br /><span class="text-verde">Viva</span>
+                </h1>
+                <p class="lead d-none d-md-block">
+                  El proceso artesanal capturado en cada grano.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carruselEufonias"
+          data-bs-slide="prev"
+        >
+          <i class="bi bi-chevron-left fs-1"></i>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carruselEufonias"
+          data-bs-slide="next"
+        >
+          <i class="bi bi-chevron-right fs-1"></i>
+        </button>
+      </div>
+    </section>
+
+    <!--Propósito-->
+    <section class="seccion-proposito py-5">
+      <div class="container py-lg-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h6 class="text-uppercase fw-bold text-rojo mb-3">
+              Café cultivado con propósito
+            </h6>
+            <h2 class="display-4 fw-bold mb-4">
+              Liderazgo que <span class="text-rojo">trasciende</span>
+            </h2>
+            <p class="lead text-muted mb-5">
+              Eufonías del Magdalena produce café de alta calidad, impulsando el
+              <strong>liderazgo femenino</strong> y el desarrollo sostenible en
+              las comunidades rurales.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="#productos" class="btn btn-proposito-primario"
+                >Conoce nuestros productos</a
+              >
+
+              <a href="#nosotras" class="btn btn-proposito-secundario"
+                >Nuestra historia</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 text-center mt-5 mt-lg-0">
+            <div class="img-wrapper shadow-lg">
+              <img
+                src="img/EquipoTrabajo.jpeg"
+                alt="Impacto"
+                class="img-fluid rounded-4 img-flotante"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Mision, Visión-->
+    <section id="nosotras" class="py-5 bg-light">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h6 class="text-uppercase fw-bold text-rojo">Nuestra Esencia</h6>
+          <h2 class="display-5 fw-bold">Sobre Nosotras</h2>
+          <div class="divider-rojo mx-auto"></div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 col-lg-5">
+            <div class="card-nosotras-roja h-100 shadow-sm p-4 text-center">
+              <div class="icon-circle-rojo mx-auto mb-3">☕</div>
+              <h3 class="fw-bold text-rojo">Misión</h3>
+              <p class="text-muted">
+                La Asociación <strong>“Eufonías del Magdalena”</strong> tiene
+                como misión promover el
+                <strong>desarrollo integral</strong> mediante el fortalecimiento
+                agroindustrial y el <strong>liderazgo femenino</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5">
+            <div class="card-nosotras-roja h-100 shadow-sm p-4 text-center">
+              <div class="icon-circle-rojo mx-auto mb-3">🚀</div>
+              <h3 class="fw-bold text-rojo">Visión</h3>
+              <p class="text-muted">
+                Ser reconocida como una organización líder en el
+                <strong>empoderamiento de mujeres rurales</strong> y la
+                producción sostenible de café de especialidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Modal Productos-->
+   <section id="productos" class="py-5 bg-light">
   <div class="container py-5">
     <div class="text-center mb-5">
-      <h6 class="text-uppercase fw-bold text-rojo">Nuestra Esencia</h6>
-      <h2 class="display-5 fw-bold">Sobre Nosotras</h2>
-      <div class="divider-rojo mx-auto"></div>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-6 col-lg-5">
-        <div class="card-nosotras-roja h-100 shadow-sm p-4 text-center">
-          <div class="icon-circle-rojo mx-auto mb-3">☕</div>
-          <h3 class="fw-bold text-rojo">Misión</h3>
-          <p class="text-muted">La Asociación <strong>“Eufonías del Magdalena”</strong> tiene como misión promover el <strong>desarrollo integral</strong> mediante el fortalecimiento agroindustrial y el <strong>liderazgo femenino</strong>.</p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-5">
-        <div class="card-nosotras-roja h-100 shadow-sm p-4 text-center">
-          <div class="icon-circle-rojo mx-auto mb-3">🚀</div>
-          <h3 class="fw-bold text-rojo">Visión</h3>
-          <p class="text-muted">Ser reconocida como una organización líder en el <strong>empoderamiento de mujeres rurales</strong> y la producción sostenible de café de especialidad.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--Modal Productos-->
-<section id="productos" class="py-5">
-  <div class="container py-5">
-    <div class="text-center mb-5">
+      <h6 class="text-uppercase fw-bold text-rojo mb-2" style="letter-spacing: 2px;">Calidad de Origen</h6>
       <h2 class="display-5 fw-bold">Nuestros <span class="text-rojo">Productos</span></h2>
       <div class="divider-rojo mx-auto"></div>
     </div>
-    <div class="row g-4">
-      <div class="col-sm-6 col-lg-4">
-        <div class="flip-card">
-          <div class="flip-card-inner" id="card-1">
-            <div class="flip-card-front card-producto shadow-sm">
-              <div class="img-container">
-                <img src="img/producto-chapolas.jpg" class="card-img-top" alt="Chapolas">
-                <span class="badge-precio">$X.XXX</span>
-              </div>
-              <div class="card-body text-center p-4">
-                <h5 class="fw-bold">Chapolas de Café</h5>
-                <button class="btn btn-rojo-outline w-100" onclick="flipCard('card-1')">Ver detalle</button>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="producto-card">
+          <div class="producto-img-box">
+            <img src="img/producto-chapolas.jpg" alt="Chapolas de Café" class="img-fluid">
+            <div class="producto-badge">$X.XXX</div>
+            <div class="producto-overlay">
+              <div class="overlay-content">
+                <p class="mb-0">Plántulas seleccionadas con alto potencial de crecimiento, listas para fortalecer tu cultivo.</p>
               </div>
             </div>
-            <div class="flip-card-back p-4 d-flex flex-column justify-content-center">
-              <h5 class="fw-bold text-amarillo">Chapolas de Café</h5>
-              <p class="small text-white">Plántulas de café listas para cultivo, seleccionadas con alto potencial de crecimiento.</p>
-              <button class="btn btn-light btn-sm rounded-pill" onclick="flipCard('card-1')">Volver</button>
+          </div>
+          <div class="producto-info p-4 text-center">
+            <h4 class="fw-bold mb-3">Chapolas de Café</h4>
+            <a href="https://wa.me/TuNumeroAqui" target="_blank" class="btn btn-rojo w-100 rounded-pill fw-bold">
+              <i class="bi bi-whatsapp me-2"></i>Pedir por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+
+      </div>
+  </div>
+</section>
+
+    <!-- Impacto -->
+    <section
+      id="impacto"
+      class="py-5"
+      style="background: #0a0a0a; overflow: hidden"
+    >
+      <div class="container py-5">
+        <div class="row g-4 text-center">
+          <div class="col-md-4">
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon text-rojo mb-3">
+                <i class="bi bi-gender-female"></i>
+              </div>
+              <div class="stat-value text-rojo" data-val="50">0</div>
+              <p class="stat-label">Mujeres Liderando</p>
+              <div class="stat-bar bg-rojo mx-auto"></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon text-amarillo mb-3">
+                <i class="bi bi-people-fill"></i>
+              </div>
+              <div class="stat-value text-amarillo" data-val="100">0</div>
+              <p class="stat-label">Familias Beneficiadas</p>
+              <div class="stat-bar bg-amarillo mx-auto"></div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-card" data-tilt>
+              <div class="stat-icon text-verde mb-3">
+                <i class="bi bi-leaf-fill"></i>
+              </div>
+              <div class="stat-value text-verde" data-val="100">0</div>
+              <p class="stat-label">Sostenibilidad %</p>
+              <div class="stat-bar bg-verde mx-auto"></div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-  </div>
-</section>
+    </section>
 
-<!-- Impacto -->
-<section id="impacto" class="py-5" style="background: #121212;">
+    <!--Modal Block and Cultura-->
+    <section id="historias" class="py-5 bg-light">
   <div class="container py-5">
-    <div class="row g-4 text-center">
-      <div class="col-md-4">
-        <div class="stat-card">
-          <div class="stat-value text-rojo" data-val="50">0</div>
-          <p class="stat-label">Mujeres Liderando</p>
-          <div class="stat-bar bg-rojo mx-auto"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="stat-card">
-          <div class="stat-value text-amarillo" data-val="100">0</div>
-          <p class="stat-label">Familias Beneficiadas</p>
-          <div class="stat-bar bg-amarillo mx-auto"></div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="stat-card">
-          <div class="stat-value text-verde" data-val="100">0</div>
-          <p class="stat-label">Sostenibilidad %</p>
-          <div class="stat-bar bg-verde mx-auto"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--Modal Block and Cultura-->
-<section id="historias" class="py-5 bg-white">
-  <div class="container py-5">
-    <div class="row mb-5 align-items-end">
+    <div class="row mb-5 align-items-center">
       <div class="col-md-7">
-        <h6 class="text-uppercase fw-bold text-rojo mb-2" style="letter-spacing: 3px;">Blog & Cultura</h6>
-        <h2 class="display-5 fw-bold">Historias del <span class="text-verde">Café</span></h2>
-        <p class="text-muted lead mb-0">Detrás de cada taza hay una gran historia.</p>
+        <h6 class="text-uppercase fw-bold text-rojo mb-2" style="letter-spacing: 3px">Cultura Cafetera</h6>
+        <h2 class="display-4 fw-bold">Crónicas del <span class="text-verde">Magdalena</span></h2>
+        <p class="text-muted lead">Cada grano cuenta una historia de esfuerzo, tierra y tradición.</p>
+      </div>
+      <div class="col-md-5 text-md-end d-none d-md-block">
+        <div class="divider-rojo ms-auto"></div>
       </div>
     </div>
 
     <div class="row g-4">
       <div class="col-lg-4 col-md-6">
-        <div class="story-card shadow-sm h-100">
-          <div class="story-img-wrapper">
-            <img src="img/proceso-cafe.jpg" alt="Proceso" class="story-img">
-            <span class="story-tag bg-amarillo text-dark">Proceso</span>
+        <div class="story-entry h-100" onclick="cargarContenido('proceso')" data-bs-toggle="modal" data-bs-target="#modalHistoria">
+          <div class="story-thumb">
+            <img src="img/MataDeCafe.jpeg" alt="Proceso" class="img-fluid">
+            <div class="story-overlay-gradient"></div>
+            <span class="story-category bg-rojo text-white">Proceso</span>
           </div>
-          <div class="story-body p-4">
-            <h4 class="fw-bold mb-3">Del grano a la taza</h4>
-            <p class="text-muted">Descubre el recorrido completo del café desde la cosecha.</p>
-            <a href="javascript:void(0)" class="read-more-link text-amarillo fw-bold" data-bs-toggle="modal" data-bs-target="#modalHistoria" onclick="cargarContenido('proceso')">Leer más <i class="bi bi-arrow-right"></i></a>
+          <div class="story-content p-4">
+            <h3 class="h4 fw-bold">Del grano a la taza</h3>
+            <p class="text-muted small">Un viaje sensorial desde las laderas del Magdalena hasta tu mesa.</p>
+            <div class="story-footer">
+              <span class="btn-read">Leer historia <i class="bi bi-plus-circle-fill ms-2"></i></span>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-6">
-        <div class="story-card shadow-sm h-100">
-          <div class="story-img-wrapper">
-            <img src="img/mujeres-cafeteras.jpg" alt="Liderazgo" class="story-img">
-            <span class="story-tag bg-rojo text-white">Liderazgo</span>
+        <div class="story-entry h-100" onclick="cargarContenido('liderazgo')" data-bs-toggle="modal" data-bs-target="#modalHistoria">
+          <div class="story-thumb">
+            <img src="img/EquipoTrabajo.jpeg" alt="Liderazgo" class="img-fluid">
+            <div class="story-overlay-gradient"></div>
+            <span class="story-category bg-rojo text-white">Liderazgo</span>
           </div>
-          <div class="story-body p-4">
-            <h4 class="fw-bold mb-3">Mujeres cafeteras</h4>
-            <p class="text-muted">Historias de transformación y pasión rural.</p>
-            <a href="javascript:void(0)" class="read-more-link text-rojo fw-bold" data-bs-toggle="modal" data-bs-target="#modalHistoria" onclick="cargarContenido('liderazgo')">Leer más <i class="bi bi-arrow-right"></i></a>
+          <div class="story-content p-4">
+            <h3 class="h4 fw-bold">Mujeres Cafeteras</h3>
+            <p class="text-muted small">El liderazgo femenino que está transformando el campo colombiano.</p>
+            <div class="story-footer">
+              <span class="btn-read">Leer historia <i class="bi bi-plus-circle-fill ms-2"></i></span>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="col-lg-4 col-md-12">
-        <div class="story-card shadow-sm h-100">
-          <div class="story-img-wrapper">
-            <img src="img/sostenibilidad.jpg" alt="Sostenibilidad" class="story-img">
-            <span class="story-tag bg-verde text-white">Sostenibilidad</span>
+        <div class="story-entry h-100" onclick="cargarContenido('sostenibilidad')" data-bs-toggle="modal" data-bs-target="#modalHistoria">
+          <div class="story-thumb">
+            <img src="img/LogoRediseño.jpeg" alt="Sostenibilidad" class="img-fluid">
+            <div class="story-overlay-gradient"></div>
+            <span class="story-category bg-rojo text-white">Sostenibilidad</span>
           </div>
-          <div class="story-body p-4">
-            <h4 class="fw-bold mb-3">Café responsable</h4>
-            <p class="text-muted">Cuidado del medio ambiente y desarrollo rural.</p>
-            <a href="javascript:void(0)" class="read-more-link text-verde fw-bold" data-bs-toggle="modal" data-bs-target="#modalHistoria" onclick="cargarContenido('sostenibilidad')">Leer más <i class="bi bi-arrow-right"></i></a>
+          <div class="story-content p-4">
+            <h3 class="h4 fw-bold">Café Responsable</h3>
+            <p class="text-muted small">Técnicas de cultivo que protegen nuestra biodiversidad local.</p>
+            <div class="story-footer">
+              <span class="btn-read">Leer historia <i class="bi bi-plus-circle-fill ms-2"></i></span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Modal para Historias -->
-<div class="modal fade" id="modalHistoria" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content border-0 shadow-lg" style="border-radius: 25px;">
-      <div class="modal-header border-0 pb-0">
-        <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-5 pt-2">
-        <div id="contenido-dinamico"></div>
-      </div>
-      <div class="modal-footer border-0 justify-content-center pb-4">
-        <button type="button" class="btn btn-rojo rounded-pill px-4" data-bs-dismiss="modal">Cerrar Historia</button>
+    <!-- Modal para Historias -->
+    <div class="modal fade" id="modalHistoria" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div
+          class="modal-content border-0 shadow-lg"
+          style="border-radius: 25px"
+        >
+          <div class="modal-header border-0 pb-0">
+            <button
+              type="button"
+              class="btn-close shadow-none"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-5 pt-2">
+            <div id="contenido-dinamico"></div>
+          </div>
+          <div class="modal-footer border-0 justify-content-center pb-4">
+            <button
+              type="button"
+              class="btn btn-rojo rounded-pill px-4"
+              data-bs-dismiss="modal"
+            >
+              Cerrar Historia
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- Sección de Contacto -->
-<section id="contacto" class="py-5 position-relative" style="background: #1a1a1a; overflow: hidden;">
-  <div class="blob-bg-rojo"></div>
-  <div class="blob-bg-verde"></div>
+    <!-- Sección de Contacto -->
+    <section
+      id="contacto"
+      class="py-5 position-relative"
+      style="background: #1a1a1a; overflow: hidden"
+    >
+      <div class="blob-bg-rojo"></div>
+      <div class="blob-bg-verde"></div>
 
-  <div class="container py-5 position-relative" style="z-index: 2;">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="contact-glass-card">
-          <div class="row g-0">
-            
-            <div class="col-md-5 bg-rojo p-5 text-white d-flex flex-column justify-content-center border-radius-custom">
-              <h2 class="fw-bold mb-4">¡Hablemos!</h2>
-              <p class="mb-5 opacity-75">Si deseas comprar café o conocer más sobre nuestra asociación, escríbenos. Te responderemos lo más pronto posible ☕</p>
-              
-              <div class="d-flex align-items-center mb-4">
-                <div class="icon-box-white me-3"><i class="bi bi-geo-alt"></i></div>
-                <span>Magdalena, Colombia</span>
-              </div>
-              <div class="d-flex align-items-center mb-4">
-                <div class="icon-box-white me-3"><i class="bi bi-whatsapp"></i></div>
-                <span>+57 300 XXX XXXX</span>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="icon-box-white me-3"><i class="bi bi-envelope"></i></div>
-                <span>contacto@eufonias.com</span>
-              </div>
-            </div>
+      <div class="container py-5 position-relative" style="z-index: 2">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="contact-glass-card">
+              <div class="row g-0">
+                <div
+                  class="col-md-5 bg-rojo p-5 text-white d-flex flex-column justify-content-center border-radius-custom"
+                >
+                  <h2 class="fw-bold mb-4">¡Hablemos!</h2>
+                  <p class="mb-5 opacity-75">
+                    Si deseas comprar café o conocer más sobre nuestra
+                    asociación, escríbenos. Te responderemos lo más pronto
+                    posible ☕
+                  </p>
 
-            <div class="col-md-7 p-5 bg-white border-radius-right">
-              <form id="formContacto">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label fw-bold">Nombre</label>
-                    <input type="text" class="form-control custom-input" placeholder="Tu nombre">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="icon-box-white me-3">
+                      <i class="bi bi-geo-alt"></i>
+                    </div>
+                    <span>Magdalena, Colombia</span>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label fw-bold">WhatsApp / Correo</label>
-                    <input type="text" class="form-control custom-input" placeholder="Cómo te contactamos">
+                  <div class="d-flex align-items-center mb-4">
+                    <div class="icon-box-white me-3">
+                      <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <span>+57 300 XXX XXXX</span>
                   </div>
-                  <div class="col-md-12">
-                    <label class="form-label fw-bold">¿En qué podemos ayudarte?</label>
-                    <select class="form-select custom-input">
-                      <option selected disabled>Elige una opción</option>
-                      <option>Comprar café (Tostado/Molido)</option>
-                      <option>Compra de Chapolas/Pergamino</option>
-                      <option>Alianzas y Proyectos</option>
-                      <option>Otras consultas</option>
-                    </select>
-                  </div>
-                  <div class="col-md-12">
-                    <label class="form-label fw-bold">Mensaje</label>
-                    <textarea class="form-control custom-input" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
-                  </div>
-                  <div class="col-md-12 mt-4">
-                    <button type="submit" class="btn btn-rojo w-100 py-3 rounded-pill fw-bold shadow-sm">
-                      Enviar mensaje <i class="bi bi-send ms-2"></i>
-                    </button>
+                  <div class="d-flex align-items-center">
+                    <div class="icon-box-white me-3">
+                      <i class="bi bi-envelope"></i>
+                    </div>
+                    <span>contacto@eufonias.com</span>
                   </div>
                 </div>
-              </form>
-            </div>
 
+                <div class="col-md-7 p-5 bg-white border-radius-right">
+                  <form id="formContacto">
+                    <div class="row g-3">
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold">Nombre</label>
+                        <input
+                          type="text"
+                          class="form-control custom-input"
+                          placeholder="Tu nombre"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label fw-bold"
+                          >WhatsApp / Correo</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control custom-input"
+                          placeholder="Cómo te contactamos"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <label class="form-label fw-bold"
+                          >¿En qué podemos ayudarte?</label
+                        >
+                        <select class="form-select custom-input">
+                          <option selected disabled>Elige una opción</option>
+                          <option>Comprar café (Tostado/Molido)</option>
+                          <option>Compra de Chapolas/Pergamino</option>
+                          <option>Alianzas y Proyectos</option>
+                          <option>Otras consultas</option>
+                        </select>
+                      </div>
+                      <div class="col-md-12">
+                        <label class="form-label fw-bold">Mensaje</label>
+                        <textarea
+                          class="form-control custom-input"
+                          rows="4"
+                          placeholder="Escribe tu mensaje aquí..."
+                        ></textarea>
+                      </div>
+                      <div class="col-md-12 mt-4">
+                        <button
+                          type="submit"
+                          class="btn btn-rojo w-100 py-3 rounded-pill fw-bold shadow-sm"
+                        >
+                          Enviar mensaje <i class="bi bi-send ms-2"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Footer-->
+   <footer class="footer-moderno">
+  <div class="footer-accent-bar">
+    <div class="bar-item bg-verde"></div>
+    <div class="bar-item bg-amarillo"></div>
+    <div class="bar-item bg-rojo"></div>
+  </div>
+
+  <div class="container pt-5 pb-4">
+    <div class="row g-4 justify-content-between">
+      
+      <div class="col-lg-4 col-md-12 text-center text-lg-start">
+        <div class="footer-logo-wrapper mb-4 mx-auto mx-lg-0">
+          <img src="img/logo_eufonias.jpeg" alt="Eufonías Logo" class="img-fluid rounded-circle">
+        </div>
+        <h3 class="h4 fw-bold text-white mb-3">Eufonías <span class="text-amarillo">del Magdalena</span></h3>
+        <p class="footer-description mb-4">
+          Empoderando a las mujeres del campo a través del café de especialidad. Un grano, una historia, una vida transformada.
+        </p>
+        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+          <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-circle"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-circle"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <div class="row">
+          <div class="col-6 col-md-4 mb-4">
+            <h6 class="footer-title">Explora</h6>
+            <ul class="list-unstyled footer-menu">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#nosotras">Historia</a></li>
+              <li><a href="#productos">Catálogo</a></li>
+              <li><a href="#impacto">Impacto</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-4 mb-4">
+            <h6 class="footer-title">Valores</h6>
+            <ul class="list-unstyled footer-menu">
+              <li><a href="#">Sostenibilidad</a></li>
+              <li><a href="#">Comercio Justo</a></li>
+              <li><a href="#">Ética Rural</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-md-4 mb-4">
+            <h6 class="footer-title">Contacto</h6>
+            <p class="footer-info"><i class="bi bi-geo-alt me-2 text-rojo"></i> Sierra Nevada, Magdalena</p>
+            <p class="footer-info"><i class="bi bi-envelope me-2 text-rojo"></i> info@eufonias.com</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <hr class="footer-divider">
 
-<!--Footer-->
-<footer class="footer-limpio">
-  <div class="footer-border-top">
-    <div class="line-verde"></div>
-    <div class="line-amarillo"></div>
-    <div class="line-rojo"></div>
-  </div>
-
-  <div class="container py-5">
-    <div class="row g-5">
-      
-      <div class="col-lg-4 col-md-6">
-        <img src="img/logo_eufonias.jpeg" alt="Logo" class="logo-footer mb-3">
-        <h3 class="fw-bold text-white mb-3">Eufonías <span class="text-rojo">del Magdalena</span></h3>
-        <p class="text-light-50 pe-lg-5">
-          Asociación de Mujeres Cafeteras comprometidas con la calidad, el campo y el desarrollo sostenible. Cultivamos historias en cada grano.
-        </p>
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="mb-0">&copy; 2026 Asociación Eufonías. Cosechado con orgullo.</p>
+      <div class="footer-legal">
+        <a href="#">Términos</a>
+        <span class="mx-2">|</span>
+        <a href="#">Privacidad</a>
       </div>
-
-      <div class="col-lg-2 col-md-6">
-        <h5 class="text-white fw-bold mb-4">Navegación</h5>
-        <ul class="list-unstyled footer-links">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotras">Nosotras</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6">
-        <h5 class="text-white fw-bold mb-4">Compromiso</h5>
-        <ul class="list-unstyled footer-links">
-          <li><a href="#">Comercio Justo</a></li>
-          <li><a href="#">Sostenibilidad</a></li>
-          <li><a href="#">Privacidad</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-3 col-md-6 text-center text-md-start">
-        <h5 class="text-white fw-bold mb-4">Síguenos</h5>
-        <div class="d-flex gap-3 justify-content-center justify-content-md-start">
-          <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="social-icon"><i class="bi bi-whatsapp"></i></a>
-        </div>
-      </div>
-
-    </div>
-
-    <hr class="mt-5 mb-4 border-secondary opacity-25">
-    
-    <div class="text-center">
-      <p class="mb-0 small text-light-50">
-        © 2026 <strong>Asociación de Mujeres Cafeteras</strong>. Todos los derechos reservados.
-      </p>
     </div>
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
