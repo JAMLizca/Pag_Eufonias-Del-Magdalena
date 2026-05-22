@@ -277,89 +277,200 @@
       </div>
     </section>
 
-    <!--Modal Productos-->
-    <section id="productos" class="py-5 bg-light">
-      <div class="container py-5">
-        <div class="text-center mb-5">
-          <h6
-            class="text-uppercase fw-bold text-rojo mb-2"
-            style="letter-spacing: 2px"
-          >
-            Calidad de Origen
-          </h6>
-          <h2 class="display-5 fw-bold">
-            Nuestros <span class="text-rojo">Productos</span>
-          </h2>
-          <div class="divider-rojo mx-auto"></div>
-        </div>
+<section id="productos" class="py-5 section-catalogo">
+  <div class="container py-4">
+    
+    <div class="text-center mb-5 revelar-abajo">
+      <h6 class="text-uppercase fw-bold text-rojo mb-2 tracking-wide">Calidad de Origen</h6>
+      <h2 class="display-5 fw-bold title-catalogo">
+        Nuestros <span class="text-rojo">Productos</span>
+      </h2>
+      <div class="divider-rojo mx-auto"></div>
+    </div>
 
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
-            <div class="producto-card">
-              <div class="producto-img-box">
-                <img
-                  src="img/Chapolas.jpeg"
-                  alt="Chapolas de Café"
-                  class="img-fluid"
-                />
-                <div class="producto-badge">$X.XXX</div>
-                <div class="producto-overlay">
-                  <div class="overlay-content">
-                    <p class="mb-0">
-                      Plántulas seleccionadas con alto potencial de crecimiento,
-                      listas para fortalecer tu cultivo.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="producto-info p-4 text-center">
-                <h4 class="fw-bold mb-3">Chapolas de Café</h4>
-                <a
-                  href="https://wa.me/TuNumeroAqui"
-                  target="_blank"
-                  class="btn btn-rojo w-100 rounded-pill fw-bold"
-                >
-                  <i class="bi bi-whatsapp me-2"></i>Pedir por WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4 justify-content-center">
-          <div class="col-md-6 col-lg-4">
-            <div class="producto-card">
-              <div class="producto-img-box">
-                <img
-                  src="img/Chapolas.jpeg"
-                  alt="Chapolas de Café"
-                  class="img-fluid"
-                />
-                <div class="producto-badge">$X.XXX</div>
-                <div class="producto-overlay">
-                  <div class="overlay-content">
-                    <p class="mb-0">
-                      Plántulas seleccionadas con alto potencial de crecimiento,
-                      listas para fortalecer tu cultivo.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="producto-info p-4 text-center">
-                <h4 class="fw-bold mb-3">Chapolas de Café</h4>
-                <a
-                  href="https://wa.me/TuNumeroAqui"
-                  target="_blank"
-                  class="btn btn-rojo w-100 rounded-pill fw-bold"
-                >
-                  <i class="bi bi-whatsapp me-2"></i>Pedir por WhatsApp
-                </a>
-              </div>
-            </div>
-          </div>
+    <div class="row g-3 mb-5 justify-content-between align-items-center revelar-abajo delay-200">
+      <div class="col-md-5">
+        <div class="search-box">
+          <i class="bi bi-search search-icon"></i>
+          <input type="text" id="inputBuscar" class="form-control input-custom" placeholder="Buscar producto (ej: Chapolas, Abono)...">
         </div>
       </div>
-    </section>
+      <div class="col-md-6 text-md-end">
+        <div class="filter-group" id="contenedorFiltros">
+          <button class="btn btn-filter active" data-categoria="todos">Todos</button>
+          <button class="btn btn-filter" data-categoria="semillas">Semillas / Plántulas</button>
+          <button class="btn btn-filter" data-categoria="herramientas">Herramientas</button>
+          <button class="btn btn-filter" data-categoria="insumos">Insumos</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-4 justify-content-center id-grid-productos" id="gridProductos">
+        </div>
+
+  </div>
+</section>
+
+<style>
+  .tracking-wide { letter-spacing: 2px; }
+  .text-rojo { color: #dc3545; }
+  .divider-rojo { width: 60px; height: 4px; background-color: #dc3545; border-radius: 2px; }
+
+  /* Controles de búsqueda y filtros */
+  .search-box { position: relative; }
+  .search-icon { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #6c757d; }
+  .input-custom { padding-left: 45px; border-radius: 50px; border: 1px solid rgba(0,0,0,0.1); padding-top: 10px; padding-bottom: 10px; }
+  
+  .btn-filter { border: 1px solid rgba(0,0,0,0.1); background: #fff; border-radius: 50px; padding: 8px 20px; font-weight: 500; margin-left: 5px; transition: all 0.3s ease; }
+  .btn-filter:hover, .btn-filter.active { background-color: #dc3545; color: #fff; border-color: #dc3545; box-shadow: 0 4px 10px rgba(220, 53, 69, 0.25); }
+
+  /* Tarjetas de Producto Modernas */
+  .producto-card-moderna {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background-color 0.4s ease;
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.03);
+  }
+  .producto-card-moderna:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+
+  .img-container-premium { position: relative; overflow: hidden; height: 240px; }
+  .img-container-premium img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .producto-card-moderna:hover .img-container-premium img { transform: scale(1.1); }
+
+  .badge-precio-premium {
+    position: absolute; top: 15px; right: 15px;
+    background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px);
+    color: #212529; font-weight: 700; padding: 6px 14px; border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); font-size: 0.95rem;
+  }
+
+  .btn-rojo { background-color: #dc3545; border-color: #dc3545; color: white; transition: all 0.3s ease; }
+  .btn-rojo:hover { background-color: #bb2d3b; box-shadow: 0 5px 15px rgba(220, 53, 69, 0.4); }
+
+  /* INTEGRACIÓN CON EL MODO OSCURO NEÓN ANTERIOR */
+  body.global-dark-mode .producto-card-moderna {
+    background: #0d061a !important;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+  }
+  body.global-dark-mode .producto-card-moderna:hover {
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.4);
+    border-color: #00ffcc;
+  }
+  body.global-dark-mode .producto-card-moderna h4 { color: #fff; }
+  body.global-dark-mode .producto-card-moderna p { color: #adb5bd !important; }
+  body.global-dark-mode .badge-precio-premium { background: #00ffcc; color: #000; box-shadow: 0 0 10px #00ffcc; }
+  body.global-dark-mode .input-custom, body.global-dark-mode .btn-filter { background: #120024; border-color: rgba(0,255,204,0.2); color: #fff; }
+  body.global-dark-mode .btn-filter.active, body.global-dark-mode .btn-filter:hover { background: #00ffcc; color: #000; border-color: #00ffcc; }
+  body.global-dark-mode .search-icon { color: #00ffcc; }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. BASE DE DATOS DEL CATÁLOGO (Aquí puedes agregar o quitar productos fácilmente)
+    const baseProductos = [
+      {
+        id: 1,
+        nombre: "Chapolas de Café",
+        descripcion: "Plántulas seleccionadas con alto potencial de crecimiento, listas para fortalecer tu cultivo.",
+        precio: "$4.500",
+        categoria: "semillas",
+        imagen: "img/Chapolas.jpeg",
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesan%20las%20Chapolas%20de%20Café"
+      },
+      {
+        id: 2,
+        nombre: "Abono Orgánico Premium",
+        descripcion: "Nutrientes orgánicos procesados para optimizar el rendimiento de la tierra en zonas del Magdalena.",
+        precio: "$25.000",
+        categoria: "insumos",
+        imagen: "img/Chapolas.jpeg", // Cambiar por imagen correspondiente
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesa%20el%20Abono%20Orgánico"
+      },
+      {
+        id: 3,
+        nombre: "Tijeras de Podar Ergonómicas",
+        descripcion: "Herramienta de acero inoxidable reforzado para cortes limpios sin dañar las ramas del café.",
+        precio: "$18.500",
+        categoria: "herramientas",
+        imagen: "img/Chapolas.jpeg", // Cambiar por imagen correspondiente
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesan%20las%20Tijeras%20de%20Podar"
+      }
+    ];
+
+    const grid = document.getElementById("gridProductos");
+    const inputBuscar = document.getElementById("inputBuscar");
+    const botonesFiltro = document.querySelectorAll(".btn-filter");
+
+    // 2. FUNCIÓN PARA GENERAR LAS TARJETAS EN EL HTML
+    function renderizarProductos(productosFiltrados) {
+      grid.innerHTML = ""; // Limpiamos el grid
+      
+      if (productosFiltrados.length === 0) {
+        grid.innerHTML = `<div class="text-center py-5"><h4 class="text-muted">No se encontraron productos coincidentes.</h4></div>`;
+        return;
+      }
+
+      productosFiltrados.forEach(prod => {
+        const tarjetaHtml = `
+          <div class="col-md-6 col-lg-4 item-producto-animado">
+            <div class="producto-card-moderna">
+              <div class="img-container-premium">
+                <img src="${prod.imagen}" alt="${prod.nombre}" loading="lazy">
+                <div class="badge-precio-premium">${prod.precio}</div>
+              </div>
+              <div class="producto-info p-4 d-flex flex-column justify-content-between" style="min-height: 220px;">
+                <div>
+                  <h4 class="fw-bold mb-2">${prod.nombre}</h4>
+                  <p class="text-muted small mb-4">${prod.descripcion}</p>
+                </div>
+                <a href="${prod.linkWhatsapp}" target="_blank" class="btn btn-rojo w-100 rounded-pill fw-bold py-2">
+                  <i class="bi bi-whatsapp me-2"></i>Pedir por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.innerHTML += tarjetaHtml;
+      });
+    }
+
+    // 3. FUNCIÓN FILTRADORA (Filtra por texto del buscador y por categoría al mismo tiempo)
+    function ejecutarFiltros() {
+      const textoBusqueda = inputBuscar.value.toLowerCase();
+      const botonActivo = document.querySelector(".btn-filter.active");
+      const categoriaActiva = botonActivo ? botonActivo.getAttribute("data-categoria") : "todos";
+
+      const resultado = baseProductos.filter(prod => {
+        const coincideTexto = prod.nombre.toLowerCase().includes(textoBusqueda) || prod.descripcion.toLowerCase().includes(textoBusqueda);
+        const coincideCategoria = (categoriaActiva === "todos") || (prod.categoria === categoriaActiva);
+        return coincideTexto && coincideCategoria;
+      });
+
+      renderizarProductos(resultado);
+    }
+
+    // 4. LOGICA DE LOS EVENTOS (ESCUCHADORES)
+    inputBuscar.addEventListener("input", ejecutarFiltros);
+
+    botonesFiltro.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        botonesFiltro.forEach(b => b.classList.remove("active")); // Quita active de todos
+        e.target.classList.add("active"); // Agrega active al presionado
+        ejecutarFiltros();
+      });
+    });
+
+    // Carga inicial de todos los productos
+    renderizarProductos(baseProductos);
+  });
+</script>
 
     <!-- Impacto -->
     <section
