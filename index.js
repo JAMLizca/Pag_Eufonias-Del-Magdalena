@@ -256,3 +256,103 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { passive: true });
 
 }); // fin DOMContentLoaded
+
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    // BASE DE DATOS DEL CATÁLOGO EN FORMATO JSON
+    const baseProductos = [
+      {
+        id: 1,
+        nombre: "Chapolas de Café",
+        descripcion: "Plántulas seleccionadas con alto potencial de crecimiento, listas para fortalecer tu cultivo.",
+        precio: "$4.500",
+        categoria: "semillas",
+        imagen: "img/chapolaa.jpeg",
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesan%20las%20Chapolas%20de%20Café"
+      },
+      {
+        id: 2,
+        nombre: "Anchetas de Café",
+        descripcion: "El mejor café de la zona,recuerda que siempre es una excelente opción para disfrutar.",
+        precio: "$25.000",
+        categoria: "insumos",
+        imagen: "img/Productos.jpeg", // Cambiar por imagen correspondiente
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesa%20el%20Abono%20Orgánico"
+      },
+      {
+        id: 3,
+        nombre: "Tijeras de Podar Ergonómicas",
+        descripcion: "Herramienta de acero inoxidable reforzado para cortes limpios sin dañar las ramas del café.",
+        precio: "$18.500",
+        categoria: "herramientas",
+        imagen: "img/tijeras.webp", // Cambiar por imagen correspondiente
+        linkWhatsapp: "https://wa.me/TuNumeroAqui?text=Hola,%20me%20interesan%20las%20Tijeras%20de%20Podar"
+      }
+    ];
+
+    const grid = document.getElementById("gridProductos");
+    const inputBuscar = document.getElementById("inputBuscar");
+    const botonesFiltro = document.querySelectorAll(".btn-filter");
+
+    //  FUCIÓN PARA GENERAR LAS TARJETAS EN EL HTML
+    function renderizarProductos(productosFiltrados) {
+      grid.innerHTML = ""; // Limpiamos el grid
+      
+      if (productosFiltrados.length === 0) {
+        grid.innerHTML = `<div class="text-center py-5"><h4 class="text-muted">No se encontraron productos coincidentes.</h4></div>`;
+        return;
+      }
+
+      productosFiltrados.forEach(prod => {
+        const tarjetaHtml = `
+          <div class="col-md-6 col-lg-4 item-producto-animado">
+            <div class="producto-card-moderna">
+              <div class="img-container-premium">
+                <img src="${prod.imagen}" alt="${prod.nombre}" loading="lazy">
+                <div class="badge-precio-premium">${prod.precio}</div>
+              </div>
+              <div class="producto-info p-4 d-flex flex-column justify-content-between" style="min-height: 220px;">
+                <div>
+                  <h4 class="fw-bold mb-2">${prod.nombre}</h4>
+                  <p class="text-muted small mb-4">${prod.descripcion}</p>
+                </div>
+                <a href="${prod.linkWhatsapp}" target="_blank" class="btn btn-rojo w-100 rounded-pill fw-bold py-2">
+                  <i class="bi bi-whatsapp me-2"></i>Pedir por WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.innerHTML += tarjetaHtml;
+      });
+    }
+
+    // FUNCIÓN FILTRADORA (Filtra por texto del buscador y por categoría al mismo tiempo)
+    function ejecutarFiltros() {
+      const textoBusqueda = inputBuscar.value.toLowerCase();
+      const botonActivo = document.querySelector(".btn-filter.active");
+      const categoriaActiva = botonActivo ? botonActivo.getAttribute("data-categoria") : "todos";
+
+      const resultado = baseProductos.filter(prod => {
+        const coincideTexto = prod.nombre.toLowerCase().includes(textoBusqueda) || prod.descripcion.toLowerCase().includes(textoBusqueda);
+        const coincideCategoria = (categoriaActiva === "todos") || (prod.categoria === categoriaActiva);
+        return coincideTexto && coincideCategoria;
+      });
+
+      renderizarProductos(resultado);
+    }
+
+    // LOGICA DE LOS EVENTOS (ECUCHADORES)
+    inputBuscar.addEventListener("input", ejecutarFiltros);
+
+    botonesFiltro.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        botonesFiltro.forEach(b => b.classList.remove("active")); // Quita active de todos
+        e.target.classList.add("active"); // Agrega active al presionado
+        ejecutarFiltros();
+      });
+    });
+
+    // Carga inicial de todos los productos
+    renderizarProductos(baseProductos);
+  });
