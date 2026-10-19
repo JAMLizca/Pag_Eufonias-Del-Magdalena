@@ -2,4 +2,4 @@
 Somos una empresa de cafe femenino dedicado producción y venta de cafe, 
 
 
-by: José Alejandro Montenegro 
+by: Jose Alejandro Montenegro 
